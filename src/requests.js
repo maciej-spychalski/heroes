@@ -7,7 +7,12 @@ export const getBasicHeroInfoById = async id => {
   const { data: image } = await axios.get(`https://superheroapi.com/api/${ACCESS_TOKEN}/${id}/image`);
   return { 
     name: powerstats.name,
-    powerstats,   // dzięki EC6 nie musimy pisać tu powerstats: powerstats poniewąż włąściwość i parametr mają taką samą nazwę
-    imgUrl: image.url
+    powerstats,   
+    imgUrl: image.url,
+    id: powerstats.id,
   }
+}
+
+export const searchHeroesByName = name => {
+  return axios.get(`https://superheroapi.com/api/${ACCESS_TOKEN}/search/${name}`)
 }
