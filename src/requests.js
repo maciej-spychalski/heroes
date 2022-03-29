@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const ACCESS_TOKEN = 112367020895106;
+const ACCESS_TOKEN = 10218900778221638;
 
 export const getBasicHeroInfoById = async id => {
   const { data: powerstats } = await axios.get(`https://superheroapi.com/api/${ACCESS_TOKEN}/${id}/powerstats`);
